@@ -1,0 +1,28 @@
+{
+  "name": "reflux-immutable",
+  "version": "1.0.0",
+  "description": "Immutable Store Mixin for Reflux",
+  "main": "ImmutableStoreMixin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://atridgedcosta@github.com/bigdatr/reflux-immutable.git"
+  },
+  "keywords": [
+    "reflux",
+    "immutable",
+    "store",
+    "state"
+  ],
+  "author": "Atridge D'Costa",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/bigdatr/reflux-immutable/issues"
+  },
+  "homepage": "https://github.com/bigdatr/reflux-immutable#readme",
+  "dependencies": {
+    "immutable": "^3.7.2"
+  }
+}
