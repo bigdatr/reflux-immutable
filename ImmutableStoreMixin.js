@@ -24,6 +24,11 @@ var ImmutableStoreMixin = {
     	}
     },
     get: function(key) {
+        if (this.onFirstRequest && !this._ImmutableStoreMixinRequested) {
+            this._ImmutableStoreMixinRequested = true;
+            this.onFirstRequest();
+        }
+
 		return this.state.get(key);
     },
     _updateLocalStorage: function() {
