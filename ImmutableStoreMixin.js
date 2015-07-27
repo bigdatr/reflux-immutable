@@ -10,10 +10,10 @@ var ImmutableStoreMixin = {
     setState: function(nextState, option) {
         if (!nextState) { return null; }
 
-        let triggerUpdate;
-        let cb;
+        var triggerUpdate;
+        var cb;
 
-        const optionType = typeof option;
+        var optionType = typeof option;
 
         if (optionType === 'boolean') {
             triggerUpdate = option;
