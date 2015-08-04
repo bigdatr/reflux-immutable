@@ -5,7 +5,11 @@ var ImmutableStoreMixin = {
     state: Immutable.Map(),
     init: function() {
         // Update state with cached data
-        this.setState(this._getCachedState(), false);
+        var nextState = this._getCachedState();
+
+        if (nextState) {
+            this.setState(nextState);
+        }
     },
     setState: function(nextState, option) {
         if (!nextState) { return null; }
@@ -18,17 +22,16 @@ var ImmutableStoreMixin = {
         if (optionType === 'boolean') {
             triggerUpdate = option;
             var _err = new Error('ImmutableStoreMixin.setState:: `triggerUpdate`, will be depracated in future release.');
-            console.log('option', nextState.toJS(), option);
             console.warn(_err.stack);
         }
         else {
             cb = option;
         }
 
-    	var _targetState = this.state.merge(nextState);
+        var _targetState = this.state.merge(nextState);
 
-    	if (_targetState !== this.state) {
-    		this.state = _targetState;
+        if (_targetState !== this.state) {
+            this.state = _targetState;
 
             if (triggerUpdate !== false) {
                 this.trigger();
@@ -39,7 +42,7 @@ var ImmutableStoreMixin = {
             if (cb) {
                 return cb();
             }
-    	}
+        }
     },
     get: function(key) {
         if (this.onFirstRequest && !this._ImmutableStoreMixinRequested) {
@@ -47,7 +50,7 @@ var ImmutableStoreMixin = {
             this.onFirstRequest();
         }
 
-		return this.state.get(key);
+        return this.state.get(key);
     },
     _updateLocalStorage: function() {
         if (!this.localStorageKey) {
