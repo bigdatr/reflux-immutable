@@ -1,7 +1,7 @@
-const StoreMixin = {
+var StoreMixin = {
     getInitialState: function() {
         if (!this.getStoreState) {
-            const err = new Error('Require `getStoreState()` when using `StoreMixin`');
+            var err = new Error('Require `getStoreState()` when using `StoreMixin`');
             console.warn(err.stack);
         }
 
