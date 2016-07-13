@@ -1,6 +1,6 @@
 {
   "name": "reflux-immutable",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Immutable Store Mixin for Reflux",
   "main": "ImmutableStoreMixin.js",
   "scripts": {
