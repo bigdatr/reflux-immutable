@@ -9,6 +9,9 @@ var StoreMixin = {
     },
     componentDidMount: function() {
         this._isMounted = true;
+
+        // Make sure state is up-to-date
+        this.onStoreChange();
     },
     onStoreChange: function() {
         if (this._isMounted) {
